@@ -1,0 +1,36 @@
+{
+  "main": "lib/index.js",
+  "files": [
+    "lib"
+  ],
+  "name": "serverless-plugin-environment-validator",
+  "version": "0.0.0",
+  "description": "A plugin for serverless that validates the environment variables before deploys to ensure that all variables exist",
+  "license": "MIT",
+  "author": "michael.ricci@bigdatr.com",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:bigdatr/serverless-plugin-environment-validator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bigdatr/serverless-plugin-environment-validator/issues"
+  },
+  "private": false,
+  "scripts": {
+    "build": "rm -rf lib && babel src --out-dir lib",
+    "prepublish": "yarn run build",
+    "watch": "yarn run build -w",
+    "flow": "blueflag-test flow",
+    "lint": "blueflag-test lint",
+    "test-all": "yarn run lint && yarn run flow"
+  },
+  "devDependencies": {
+    "babel-core": "^6.23.0",
+    "babel-register": "^6.23.0",
+    "babel-cli": "^6.23.0",
+    "babel-loader": "v6.4.0",
+    "babel-preset-blueflag": "^0.3.0",
+    "flow-bin": "^0.39.0",
+    "blueflag-test": "^0.16.0"
+  }
+}
