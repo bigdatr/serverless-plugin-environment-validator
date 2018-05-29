@@ -4,12 +4,14 @@ type Serverless = {
     service: {provider: {environment: {[key: string]: string}}}
 };
 
-export default class {
+class Validator {
     serverless: Serverless;
+    options: Object;
     hooks: {[key: string]: Function};
 
-    constructor(serverless: Serverless) {
+    constructor(serverless: Serverless, options: Object) {
         this.serverless = serverless;
+        this.options = options;
         this.hooks = {
             'before:package:initialize': this.checkEnvironment.bind(this)
         };
@@ -24,3 +26,5 @@ export default class {
         });
     }
 };
+
+module.exports = Validator;
