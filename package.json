@@ -4,7 +4,7 @@
     "lib"
   ],
   "name": "serverless-plugin-environment-validator",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "A plugin for serverless that validates the environment variables before deploys to ensure that all variables exist",
   "license": "MIT",
   "author": "michael.ricci@bigdatr.com",
